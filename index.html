@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="./socket.io.js"></script>
+</head>
+<body>
+
+  <h1>Hello Chat!</h1>
+
+  <div id="login-form-view">&nbsp;</div>
+  <div id="chat-view">&nbsp;</div>
+  <div id="logout-form-view">&nbsp;</div>
+
+  <script id="login-form-tpl" type="template">
+    <div>Login</div>
+    <form id="login-form">
+      <div>
+        <input placeholder="username" id="username" type="text"/>
+      </div>
+      <div>
+        <input placeholder="pass" id="pass" type="text"/>
+      </div>
+      <div>
+        <input type="submit"/>
+      </div>
+    </form>
+  </script>
+
+  <script id="logout-tpl" type="template">
+    <a href="#" id="logout">Logout</a>
+  </script>
+
+  <script id="chat-tpl" type="template">
+    <div>Chat</div>
+    <form id="form">
+      <div>
+        <textarea></textarea>
+      </div>
+      <div>
+        <input type="submit"/>
+      </div>
+    </form>
+    <ul id="chat"></ul>
+  </script>
+
+  <script src="./app.js"></script>
+</body>
+</html>

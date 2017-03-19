@@ -1,0 +1,23 @@
+{
+  "name": "chat-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "http-server ./ -p 3001"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dosandk/chat-client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dosandk/chat-client/issues"
+  },
+  "homepage": "https://github.com/dosandk/chat-client#readme",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
