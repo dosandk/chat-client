@@ -25,8 +25,10 @@ const loginFormView = new View('login-form-view', 'login-form-tpl');
 const logoutFormView = new View('logout-form-view', 'logout-tpl');
 const chatView = new View('chat-view', 'chat-tpl');
 
+const DOMAIN_URL = 'http://front-camp-chat.herokuapp.com/';
+
 loginFormView.render(function() {
-    const loginUrl = 'http://localhost:3000/login';
+    const loginUrl = `${DOMAIN_URL}login`;
     const loginForm = document.getElementById('login-form');
     const usernameEl = document.getElementById('username');
     const passEl = document.getElementById('pass');
@@ -57,7 +59,7 @@ function initLogout() {
     const logoutEl = document.getElementById('logout');
 
     logoutEl.addEventListener('click', () => {
-        post('http://localhost:3000/logout', {})
+        post(`${DOMAIN_URL}logout`, {})
             .then(() => {
                 loginFormView.show();
                 logoutFormView.hide();
@@ -69,7 +71,7 @@ function initLogout() {
 }
 
 function initSocket() {
-    const socket = io.connect('http://localhost:3000/');
+    const socket = io.connect(`${DOMAIN_URL}`);
     const form = document.getElementById('form');
     const [messageBox] = form.getElementsByTagName('textarea');
     const chatElement = document.getElementById('chat');
