@@ -18,7 +18,7 @@
     "url": "https://github.com/dosandk/chat-client/issues"
   },
   "homepage": "https://github.com/dosandk/chat-client#readme",
-  "devDependencies": {
+  "dependencies": {
     "http-server": "^0.9.0"
   }
 }
