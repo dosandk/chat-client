@@ -31,15 +31,17 @@ function loginFormView() {
       this.socket = io.connect(`${config.API_URL}`);
 
       this.socket.on('message', msg => {
-        printMessage(msg);
+        const { message, username } = msg;
+
+        printMessage(`${username} >> ${msg.message}`);
       });
 
-      this.socket.on('join', () => {
-        printMessage(`${App.user} joined to chat`);
+      this.socket.on('join', username => {
+        printMessage(`${username} joined to chat`);
       });
 
-      this.socket.on('leave', () => {
-        printMessage(`${App.user} left chat`);
+      this.socket.on('leave', username => {
+        printMessage(`${username} left chat`);
       });
 
       function printMessage(msg) {
